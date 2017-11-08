@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Quentin André - papers</title><link href="/" rel="alternate"></link><link href="/papers%5Cfeeds%5Cpapers.atom.xml" rel="self"></link><id>/</id><updated>2016-01-11T00:00:00-07:00</updated><entry><title>When Restricted-Resources Decrease Consumption</title><link href="/papers/ruf/" rel="alternate"></link><published>2016-01-11T00:00:00-07:00</published><updated>2016-01-11T00:00:00-07:00</updated><author><name>Quentin André</name></author><id>tag:None,2016-01-11:/papers/ruf/</id><summary type="html">&lt;p&gt;In this paper, we investigate the consequences of restricted-use
+funds (i.e. resources that can only be spent on specific products) on
+consumers' budgeting decisions. Using a policy-relevant example, we find
+that consumers endowed with a food-restricted resource (akin to food
+stamps) budget a smaller amount to food than consumers endowed with an
+unrestricted resource.&lt;/p&gt;</summary><content type="html">&lt;h1 id="1-manifest"&gt;1. Manifest&lt;/h1&gt;
+&lt;p&gt;The Process Macro by Andrew F. Hayes has helped thousands of researchers
+in their analysis of moderation, mediation, and conditional processes.
+Unfortunately, Process was only available for proprietary softwares
+(SAS and SPSS), which means that students and researchers had to
+purchase a license of those softwares to make use of the Macro.&lt;/p&gt;
+&lt;p&gt;Because of the growing popularity of Python in the scientific community,
+I decided to implement the features of the Process Macro into an
+open-source library, that researchers will be able to use without
+relying on proprietary softwares. PyProcess&lt;/p&gt;</content></entry></feed>

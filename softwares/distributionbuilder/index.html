@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>DistributionBuilder - Quentin André</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <link rel="canonical" href="/softwares/distributionbuilder/">
+
+        <meta name="author" content="Quentin André"/>
+        <meta name="description" content="DistributionBuilder allows you to add graphical interfaces to your experiments, that participants can use to &#34;draw&#34; their mental representation of a numerical or probabilistic outcome."/>
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.united.min.css"
+              type="text/css"/>
+
+    <!-- TOC Plugin -->
+    <link rel="stylesheet" href="/theme/css/toc/toc.css" type="text/css"/>
+
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css"
+          rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+
+
+
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="navbar navbar-default navbar-fixed-top"
+     role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand ">
+                Quentin André
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+    <ul class="breadcrumb list-inline">
+        <li><a href="/software">
+            Software
+        </a></li>
+        <li class="active"><a href="/softwares/distributionbuilder/">
+            DistributionBuilder
+        </a></li>
+    </ul>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a class="btn button-lib" href=https://github.com/QuentinAndre/DistributionBuilder target="_blank">
+                View on GitHub
+            </a>
+        </li>
+        <li></li>
+        <li><a class="btn button-lib"
+               href=https://github.com/QuentinAndre/DistributionBuilder/raw/master/distributionbuilder.zip target="_blank"> Download Library (Zip)</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+        <h1 data-toc-skip class="entry-title">DistributionBuilder</h1>
+        <h2 data-toc-skip class="entry-subtitle">Subjective Probability Elicitation Made Easy</h2>
+    <div class="entry-content">
+        <h1 id="146-introduction">1. Introduction</h1>
+<h2 id="a-motivation">A. Motivation</h2>
+<p>In <a href="http://journal.sjdm.org/13/131029/jdm131029.pdf"><strong>'Lay understanding of probability distributions'</strong> (2014)</a>
+Daniel Goldstein and David Rothschild have highlighted the benefits of
+using graphical interfaces called <strong>distribution builders</strong> to study
+subjective probabilities, perceptions of frequency, and confidence
+judgements.</p>
+<p>However, the implementation of such distribution builders in online
+studies is not straightforward, as survey platforms do not
+implement this type of question. The DistributionBuilder library was
+created to address this issue, and make the implementation of
+distribution builders easy and accessible to researchers.
+The library is user-friendly, and requires very little programming
+knowledge to be used.</p>
+<h2 id="b-citing-the-library">B. Citing the Library</h2>
+<p>If you are using DistributionBuilder in your research, please cite it:</p>
+<p><code>Quentin ANDRE. (2016, November 15). DistributionBuilder v 1.0.0. Zenodo. http://doi.org/10.5281/zenodo.166736</code></p>
+<p>It is also accessible using its <a href="https://doi.org/10.5281/zenodo.166736">Digital Object Identifier (DOI)</a>.</p>
+<h2 id="c-about">C. About</h2>
+<p>DistributionBuilder was developed by Quentin André while a Ph.D. candidate in
+Marketing at INSEAD Business School, France. If you have any comment,
+feedback or suggestion regarding this library or its documentation,
+please let me know at
+<a href="mailto:quentin@andre@insead.edu">quentin.andre@insead.edu</a> or use
+GitHub issues.</p>
+<h1 id="246-installation">2. Installation</h1>
+<p>You have several ways of adding DistributionBuilder to your experiments:</p>
+<h2 id="a-to-qualtrics">A. To Qualtrics</h2>
+<p>If you prefer starting from a minimal working example and tweaking it,
+<a href="/theme/assets/qualtricsexample.qsf" target="_blank" download>
+you can find a fully functional integration to Qualtrics here in the form of a .qsf file</a>
+that you can import in Qualtrics.</p>
+<p>Otherwise, just follow these simple steps:</p>
+<ol>
+<li>Navigate to the "Look and Feel" section of your survey, and click on the "Advanced" tab</li>
+<li>Edit the "Header" section, and add the following lines to load the library script and the library styles:  </li>
+</ol>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.rawgit.com/QuentinAndre/DistributionBuilder/master/distributionbuilder.css&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.rawgit.com/QuentinAndre/DistributionBuilder/master/distributionbuilder.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<p>That's it! You can now add your own distribution builders in the
+"Custom Javascript" section of your Qualtrics questions. For examples on
+how to use it, follow the instructions on this page.</p>
+<h2 id="b-to-stand-alone-website">B. To Stand-Alone Website</h2>
+<p>If you are hosting your experiment on a separate website, here is how to add the script:</p>
+<ol>
+<li>Download the Library using the button at the top of the page.</li>
+<li>Add the Javascript file <code>distributionbuilder.min.js</code> and the CSS file <code>distributionbuilder.css</code> to your html code:</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;distributionbuilder.css&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;distributionbuilder.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<ol>
+<li>That's it! You can now add your own distribution builders to your webpage. No need to include jQuery!
+DistributionBuilder automatically injects it, and makes it accessible under the <code>$j</code> alias. Instead of typing
+<code>$('#Hello')</code>, type <code>$j('#Hello')</code>.</li>
+</ol>
+<h1 id="346-using-distributionbuilder">3. Using DistributionBuilder</h1>
+<p>The library is extremely easy to use, and allows you to add fully functional
+distribution builders in a few lines of code.</p>
+<div class="panel panel-default">
+        <div class="panel-heading">Demo:</div>
+        <div class="panel-body">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href=#output0 role="tab"
+                                                          data-toggle="tab">Output</a>
+                </li>
+                <li role="presentation"><a href=#js0 role="tab" data-toggle="tab">Javascript</a></li>
+                <li role="presentation"><a href=#html0 role="tab" data-toggle="tab">HTML</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id=output0>
+
+<div id='targetdiv0' class='distbuilder'></div>
+
+                </div>
+                <div role="tabpanel" class="tab-pane" id=js0>
+                    <div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">distbuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DistributionBuilder</span><span class="p">();</span>
+<span class="nx">distbuilder</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;targetdiv&#39;</span><span class="p">);</span>
+<span class="nx">distbuilder</span><span class="p">.</span><span class="nx">labelize</span><span class="p">();</span>
+</pre></div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id=html0>
+                    <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;targetdiv&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<ul>
+<li>For Qualtrics, add a copy the HTML in your question, and copy the Javascript code below in the "Custom Javascript"
+section. See <a href="https://www.qualtrics.com/support/survey-platform/survey-module/question-options/add-javascript/">this link</a>
+if you have never added Javascript to a Qualtrics question before.</li>
+<li>For a website, copy the HTML, and copy the code below between your
+two <code>&lt;script&gt;</code> tags.</li>
+</ul>
+<p>In just three lines of code, you have created an interactive (try it!)
+Distribution Builder in the <code>&lt;div&gt;</code> section called “targetdiv”.</p>
+<p>The DistributionBuilder can be customized to your liking. Browse the
+sections below to discover how you can access and store the results
+of your participants, customize the appearance and features of the
+distribution builder, and implement more complex logics in your studies.</p>
+<h1 id="446-customization">4. Customization</h1>
+<p>The DistributionBuilder object is created in different steps:</p>
+<ul>
+<li><strong>Initialization</strong> (defining the object and its properties)</li>
+<li><strong>Render</strong> (tweaking where and how it should appear on the page)</li>
+<li><strong>Label</strong> (choosing what the labels for the buckets should look like)</li>
+</ul>
+<p>Each steps offer opportunities to customize the DistributionBuilder.</p>
+<h2 id="a-initialization">A. Initialization</h2>
+<p>The first step in creating a Distribution Builder is to initialize
+the object:</p>
+<div class="highlight"><pre><span></span><span class="nx">myDistBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DistributionBuilder</span><span class="p">({})</span>
+</pre></div>
+
+
+<p>This function takes the following parameters:</p>
+<ul>
+<li><code>nBuckets</code>, <em>(default: 10)</em>: The number of buckets (columns)
+to which balls can be allocated.</li>
+<li><code>nRows</code>, <em>(default: 10)</em>: The number of rows of the distribution
+builder (i.e. the maximum number of balls that can be allocated to a
+certain bucket).</li>
+<li><code>minVal</code>, <em>(default: 0)</em>: The value corresponding to the first
+bucket (the smallest value).</li>
+<li><code>maxVal</code>, <em>(default: 10)</em>: The value corresponding to the last
+bucket (the largest value).</li>
+<li><code>nBalls</code>, <em>(default: 10)</em>: The total number of balls to allocate.</li>
+<li><code>onTouch</code>, <em>(default: <code>function () {}</code>)</em>: A JavaScript function that
+ will be called every time the user clicks a button of the distribution
+ builder to add/remove a ball.</li>
+<li><code>onChange</code>, <em>(default: <code>function () {}</code>)</em>: A JavaScript function
+that will be called every time the user successfully changes the
+allocation of balls (i.e. when the add/remove action is performed on
+non-filled/non-empty bucket, and when there are still balls available
+to allocate).</li>
+</ul>
+<div class="panel panel-default">
+        <div class="panel-heading">Demo:</div>
+        <div class="panel-body">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href=#output1 role="tab"
+                                                          data-toggle="tab">Output</a>
+                </li>
+                <li role="presentation"><a href=#js1 role="tab" data-toggle="tab">Javascript</a></li>
+                <li role="presentation"><a href=#html1 role="tab" data-toggle="tab">HTML</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id=output1>
+
+<div id='targetdiv1' class='distbuilder'></div>
+
+                </div>
+                <div role="tabpanel" class="tab-pane" id=js1>
+                    <div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">distbuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DistributionBuilder</span><span class="p">({</span>
+    <span class="nx">nRows</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="nx">nBuckets</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="nx">minVal</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">maxVal</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="nx">nBalls</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="nx">onTouch</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Distbuilder was touched!&#39;</span><span class="p">)</span>
+    <span class="p">},</span>
+    <span class="nx">onChange</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Distbuilder was updated!&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="p">});</span>
+<span class="nx">distbuilder</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;targetdiv&#39;</span><span class="p">);</span>
+<span class="nx">distbuilder</span><span class="p">.</span><span class="nx">labelize</span><span class="p">();</span>
+</pre></div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id=html1>
+                    <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;targetdiv&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<h2 id="b-render">B. Render</h2>
+<p>After the DistributionBuilder object is initialized, you must call
+another method to indicate where you want to see it displayed on the
+page, and how it should be displayed.</p>
+<div class="highlight"><pre><span></span><span class="nx">DistributionBuilder</span><span class="p">.</span><span class="nx">render</span><span class="p">()</span>
+</pre></div>
+
+
+<p>This method requires the argument <code>target</code>, and you can optionally
+supply the <code>order</code> and the <code>resize</code> arguments to further tweak the
+appearance of the Distribution Builder.</p>
+<ul>
+<li><code>target</code> <em>(required argument)</em>: The html <code>id</code> attribute of the
+element in which the distribution builder should be displayed. For best
+results, this element should be a <code>&lt;div&gt;</code> with a fixed width.</li>
+<li><code>order</code>, <em>(default: ‘grid-labels-buttons’)</em>: The order in which the
+elements of the Distribution Builder should be rendered. If you want for
+instance the labels to appear above the grid, you should specify
+‘labels-grid-buttons’.</li>
+<li><code>resize</code>, <em>(default: true)</em>: By default, the render function is
+taking the size of the <code>target</code>, dividing it by the number of buckets,
+and using this number to resize the labels, buttons, and grid. In some
+rare cases (e.g. a very narrow target  div, or a very large number of
+buckets), the resize cause the labels to overlap. In that case, it is
+recommended that you change this argument to <code>false</code>, and specify the
+width of the labels, grid, and buttons yourself using css
+(see the CSS section for more details on this).</li>
+</ul>
+<p>We can for instance use this function to place the labels at the top
+of the DistributionBuilder:</p>
+<div class="panel panel-default">
+        <div class="panel-heading">Demo:</div>
+        <div class="panel-body">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href=#output2 role="tab"
+                                                          data-toggle="tab">Output</a>
+                </li>
+                <li role="presentation"><a href=#js2 role="tab" data-toggle="tab">Javascript</a></li>
+                <li role="presentation"><a href=#html2 role="tab" data-toggle="tab">HTML</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id=output2>
+
+<div id='targetdiv2' class='distbuilder'></div>
+
+                </div>
+                <div role="tabpanel" class="tab-pane" id=js2>
+                    <div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">distbuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DistributionBuilder</span><span class="p">({</span>
+    <span class="nx">nRows</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nx">nBuckets</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="nx">minVal</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">maxVal</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="nx">nBalls</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nx">onTouch</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Distbuilder was touched!&#39;</span><span class="p">)</span>
+    <span class="p">},</span>
+    <span class="nx">onChange</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Distbuilder was updated!&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="p">});</span>
+<span class="nx">distbuilder</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;targetdiv&#39;</span><span class="p">,</span> <span class="s1">&#39;labels-grid-buttons&#39;</span><span class="p">);</span>
+<span class="nx">distbuilder</span><span class="p">.</span><span class="nx">labelize</span><span class="p">();</span>
+</pre></div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id=html2>
+                    <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;targetdiv&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<h2 id="c-label">C. Label</h2>
+<p>The last step adds some labels to the buckets of your
+DistributionBuilder:</p>
+<div class="highlight"><pre><span></span><span class="nx">DistributionBuilder</span><span class="p">.</span><span class="nx">labelize</span><span class="p">()</span>
+</pre></div>
+
+
+<p>By default, the Distribution Builder automatically creates evenly spaced
+labels, using the distance between the minimum and maximum value, and
+the number of buckets, as follow:</p>
+<div class="highlight"><pre><span></span><span class="nx">step</span> <span class="o">=</span> <span class="p">(</span><span class="nx">maxValue</span> <span class="o">-</span> <span class="nx">minValue</span><span class="p">)</span><span class="o">/</span><span class="nx">nBuckets</span><span class="p">;</span>
+<span class="nx">baseValue</span> <span class="o">=</span> <span class="nx">minValue</span> <span class="o">+</span> <span class="nx">step</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="nx">labels</span> <span class="o">=</span> <span class="p">[</span><span class="nx">baseValue</span> <span class="o">+</span> <span class="nx">step</span><span class="o">*</span><span class="mi">0</span><span class="p">,</span> <span class="nx">baseValue</span> <span class="o">+</span> <span class="nx">step</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span> <span class="p">...,</span> <span class="nx">baseValue</span> <span class="o">+</span><span class="nx">step</span><span class="o">*</span><span class="p">(</span><span class="nx">nBuckets</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+
+
+<p>Calling the method <code>DistributionBuilder.labelize()</code> without arguments
+will display those labels.</p>
+<p>Alternatively, you can customize the labels using the following
+arguments:</p>
+<ul>
+<li><code>labels</code>, an array of length <code>nBuckets</code>. Supplying this argument
+will override the default labels.</li>
+<li><code>prefix</code>, a string (e.g. ‘$’) which you would like to see prepended
+to all the labels.</li>
+<li><code>suffix</code>, a string (e.g. ‘€’) which you would like to see appended
+to all the labels.</li>
+</ul>
+<p>The <code>prefix</code> and <code>suffix</code> arguments are always applied, regardless of
+whether you specify custom labels using the <code>label</code> argument.</p>
+<div class="panel panel-default">
+        <div class="panel-heading">Demo:</div>
+        <div class="panel-body">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href=#output3 role="tab"
+                                                          data-toggle="tab">Output</a>
+                </li>
+                <li role="presentation"><a href=#js3 role="tab" data-toggle="tab">Javascript</a></li>
+                <li role="presentation"><a href=#html3 role="tab" data-toggle="tab">HTML</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id=output3>
+
+<div id='targetdiv3' class='distbuilder'></div>
+
+                </div>
+                <div role="tabpanel" class="tab-pane" id=js3>
+                    <div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">distbuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DistributionBuilder</span><span class="p">({</span>
+    <span class="nx">nRows</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nx">nBuckets</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="nx">minVal</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">maxVal</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="nx">nBalls</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nx">onTouch</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Distbuilder was touched!&#39;</span><span class="p">)</span>
+    <span class="p">},</span>
+    <span class="nx">onChange</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Distbuilder was updated!&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="p">});</span>
+<span class="nx">distbuilder</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span>
+<span class="nx">distbuilder</span><span class="p">.</span><span class="nx">labelize</span><span class="p">({</span>
+    <span class="nx">prefix</span><span class="o">:</span> <span class="s1">&#39;~&#39;</span><span class="p">,</span>
+    <span class="nx">suffix</span><span class="o">:</span> <span class="s1">&#39;€&#39;</span>
+<span class="p">});</span>
+</pre></div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id=html3>
+                    <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;targetdiv&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<h1 id="546-methods-for-accessing-data">5. Methods for Accessing Data</h1>
+<p>After setting up the Distribution Builder, its internal state can be
+conveniently accessed through three methods:</p>
+<ul>
+<li>
+<p><code>DistributionBuilder.getDistribution()</code> returns the current
+allocation of balls in the form of an array of length nBuckets. If there
+are four buckets, and the user has allocated two balls to the first
+bucket, one to the third one, and zero to the second and fourth, the
+method will return <code>[2, 0, 1, 0]</code>.</p>
+</li>
+<li>
+<p><code>DistributionBuilder.getRemainingBalls()</code> returns the number of
+balls that have not been allocated yet.</p>
+</li>
+<li>
+<p><code>DistributionBuilder.isComplete()</code> returns <code>true</code> is the user has
+allocated all the balls, and <code>false</code> otherwise.</p>
+</li>
+</ul>
+<p>The following examples demonstrate how those methods can be used
+in your experiments and studies.</p>
+<h2 id="a-balls-allocated">A. Balls Allocated</h2>
+<p>This can be achieved by creating two <code>&lt;div&gt;</code>s called “BallsLeft” and
+“BallsAllocated”, and assigning a function to the <code>onChange</code> argument
+of the Distribution Builder initialization function. This function will
+read the number of balls allocated and the number of balls left, and
+update the <code>&lt;div&gt;</code>s everytime those values change.</p>
+<div class="panel panel-default">
+        <div class="panel-heading">Demo:</div>
+        <div class="panel-body">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href=#output4 role="tab"
+                                                          data-toggle="tab">Output</a>
+                </li>
+                <li role="presentation"><a href=#js4 role="tab" data-toggle="tab">Javascript</a></li>
+                <li role="presentation"><a href=#html4 role="tab" data-toggle="tab">HTML</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id=output4>
+
+<div id='LabelContainer'>
+<div id='BallsLeft'>You have 10 balls left.</div>
+<div id='BallsAllocated'>You have allocated 0 balls.</div>
+</div>
+<div id='targetdiv4' class='distbuilder'></div>
+
+                </div>
+                <div role="tabpanel" class="tab-pane" id=js4>
+                    <div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">n_balls</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">$j</span><span class="p">(</span><span class="s1">&#39;#BallsLeft&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s1">&#39;You have &#39;</span> <span class="o">+</span> <span class="nx">n_balls</span> <span class="o">+</span> <span class="s1">&#39; balls left.&#39;</span><span class="p">);</span>
+<span class="nx">$j</span><span class="p">(</span><span class="s1">&#39;#BallsAllocated&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s1">&#39;You have allocated &#39;</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">+</span> <span class="s1">&#39; balls.&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">distbuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DistributionBuilder</span><span class="p">({</span>
+    <span class="nx">minVal</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">maxVal</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="nx">nRows</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nx">nBuckets</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="nx">nBalls</span><span class="o">:</span> <span class="nx">n_balls</span><span class="p">,</span>
+    <span class="nx">onChange</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">remainingballs</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getRemainingBalls</span><span class="p">();</span>
+        <span class="kd">var</span> <span class="nx">ballsallocated</span> <span class="o">=</span> <span class="nx">n_balls</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">getRemainingBalls</span><span class="p">();</span>
+        <span class="nx">$j</span><span class="p">(</span><span class="s1">&#39;#BallsLeft&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s1">&#39;You have &#39;</span> <span class="o">+</span> <span class="nx">remainingballs</span> <span class="o">+</span> <span class="s1">&#39; balls left.&#39;</span><span class="p">);</span>
+        <span class="nx">$j</span><span class="p">(</span><span class="s1">&#39;#BallsAllocated&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s1">&#39;You have allocated &#39;</span> <span class="o">+</span> <span class="nx">ballsallocated</span> <span class="o">+</span> <span class="s1">&#39; balls.&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+<span class="nx">distbuilder</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;targetdiv&#39;</span><span class="p">);</span>
+<span class="nx">distbuilder</span><span class="p">.</span><span class="nx">labelize</span><span class="p">();</span>
+</pre></div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id=html4>
+                    <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;LabelContainer&#39;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;BallsLeft&#39;</span><span class="p">&gt;</span>You have X balls left.<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;BallsAllocated&#39;</span><span class="p">&gt;</span>You have allocated X balls.<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;targetdiv&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<h2 id="b-validation">B. Validation</h2>
+<p>You probably want the participants to your studies to allocate all the
+balls before they are able to validate their distribution. It can be
+done by creating a button, and only enabling it when all the balls
+have been allocated:</p>
+<ul>
+<li>Create a <code>button</code> called “SubmitDistribution” with <code>disabled=true</code>.
+When clicked, this button will display "Distribution Validated!".</li>
+<li>Assign a function that will enable or disable the button to the
+<code>onChange</code> argument of the DistributionBuilder:<ul>
+<li>When <code>DistributionBuilder.isComplete()</code> returns <code>false</code>, the button
+will be disabled.</li>
+<li>When <code>DistributionBuilder.isComplete()</code> returns <code>false</code>, the button
+will be enabled.</li>
+</ul>
+</li>
+</ul>
+<p>This can be used to ensure that the distribution is fully specified
+before the respondents can proceed to the next page.</p>
+<div class="panel panel-default">
+        <div class="panel-heading">Demo:</div>
+        <div class="panel-body">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href=#output5 role="tab"
+                                                          data-toggle="tab">Output</a>
+                </li>
+                <li role="presentation"><a href=#js5 role="tab" data-toggle="tab">Javascript</a></li>
+                <li role="presentation"><a href=#html5 role="tab" data-toggle="tab">HTML</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id=output5>
+
+<div style='text-align: center;margin-bottom: 3px;'>
+<button class='btn btn-default' id='SubmitDistribution1' disabled='true'>Submit Distribution</button>
+</div>
+<div id='targetdiv5' class='distbuilder'></div>
+
+                </div>
+                <div role="tabpanel" class="tab-pane" id=js5>
+                    <div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">distbuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DistributionBuilder</span><span class="p">({</span>
+    <span class="nx">minVal</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">maxVal</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="nx">nRows</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nx">nBuckets</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="nx">nBalls</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nx">onChange</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">isComplete</span><span class="p">())</span> <span class="p">{</span>
+            <span class="nx">$j</span><span class="p">(</span><span class="s1">&#39;#SubmitDistribution&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">$j</span><span class="p">(</span><span class="s1">&#39;#SubmitDistribution&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+<span class="nx">$j</span><span class="p">(</span><span class="s1">&#39;#SubmitDistribution&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Distribution Validated!&#39;</span><span class="p">)});</span>
+<span class="nx">distbuilder</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;targetdiv&#39;</span><span class="p">);</span>
+<span class="nx">distbuilder</span><span class="p">.</span><span class="nx">labelize</span><span class="p">({});</span>
+</pre></div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id=html5>
+                    <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;text-align: center;margin-bottom: 3px;&#39;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;btn btn-default&#39;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;SubmitDistribution&#39;</span> <span class="na">disabled</span><span class="o">=</span><span class="s">&#39;true&#39;</span><span class="p">&gt;</span>Submit Distribution<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;targetdiv&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<h2 id="c-reading-distribution">C. Reading Distribution</h2>
+<p>We would now like to see in which buckets the balls have been allocated
+when the user validates the distribution by clicking on the button.</p>
+<p>Building upon the previous example, we can display the actual
+distribution that the user has specified by calling the method
+<code>DistributionBuilder.getDistribution()</code>.</p>
+<div class="panel panel-default">
+        <div class="panel-heading">Demo:</div>
+        <div class="panel-body">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href=#output6 role="tab"
+                                                          data-toggle="tab">Output</a>
+                </li>
+                <li role="presentation"><a href=#js6 role="tab" data-toggle="tab">Javascript</a></li>
+                <li role="presentation"><a href=#html6 role="tab" data-toggle="tab">HTML</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id=output6>
+
+<div style='text-align: center;margin-bottom: 3px;'>
+<button class='btn btn-default' id='SubmitDistribution2' disabled='true'>Submit Distribution</button>
+</div>
+<div id='targetdiv6' class='distbuilder'></div>
+
+                </div>
+                <div role="tabpanel" class="tab-pane" id=js6>
+                    <div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">distbuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DistributionBuilder</span><span class="p">({</span>
+    <span class="nx">minVal</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">maxVal</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="nx">nRows</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nx">nBuckets</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="nx">nBalls</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nx">onChange</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">isComplete</span><span class="p">())</span> <span class="p">{</span>
+            <span class="nx">$j</span><span class="p">(</span><span class="s1">&#39;#SubmitDistribution&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">$j</span><span class="p">(</span><span class="s1">&#39;#SubmitDistribution&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+<span class="nx">$j</span><span class="p">(</span><span class="s1">&#39;#SubmitDistribution&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;The distribution specified by the user is: &#39;</span> <span class="o">+</span> <span class="nx">distbuilder</span><span class="p">.</span><span class="nx">getDistribution</span><span class="p">();</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span>
+<span class="p">});</span>
+<span class="nx">distbuilder</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;targetdiv&#39;</span><span class="p">);</span>
+<span class="nx">distbuilder</span><span class="p">.</span><span class="nx">labelize</span><span class="p">({});</span>
+</pre></div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id=html6>
+                    <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;text-align: center;margin-bottom: 3px;&#39;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;btn btn-default&#39;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;SubmitDistribution&#39;</span> <span class="na">disabled</span><span class="o">=</span><span class="s">&#39;true&#39;</span><span class="p">&gt;</span>Submit Distribution<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;targetdiv&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<h2 id="saving-data-in-qualtrics">Saving Data in Qualtrics</h2>
+<h2 id="saving-data-in-qualtrics_1">. Saving Data in Qualtrics</h2>
+<p>You will often want the Distribution Builder to be part of larger survey
+on Qualtrics, and store the participant's distribution in a variable.
+Here is one way to do it:</p>
+<ul>
+<li>In the "Survey Flow" section of your survey, create a new Embedded
+Data field at the beginning of your survey flow called
+<code>"MyDistributionResult"</code>, or any other name that you want to use.
+Leave the value empty for now: this is where the results will be stored</li>
+<li>You can now use the <code>Qualtrics.SurveyEngine.setEmbeddedData()</code>
+function provided by Qualtrics to store a value in the
+<code>"MyDistributionResult"</code> variable. The syntax is:
+<code>Qualtrics.SurveyEngine.setEmbeddedData("MyDistributionResult", "TheStringYouWantToStoreHere")</code></li>
+<li>Since this Qualtrics function requires a string, but the method
+<code>DistributionBuilder.getDistribution()</code> returns an array, you must first
+convert this array into a string. To do so, simply use
+<code>DistributionBuilder.getDistribution().join()</code>. This will join the
+elements of the array by commas, and you will be able to store it in
+Qualtrics.</li>
+</ul>
+<p>Building upon the previous example once again:</p>
+<div class="panel panel-default">
+        <div class="panel-heading">Demo:</div>
+        <div class="panel-body">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href=#output7 role="tab"
+                                                          data-toggle="tab">Output</a>
+                </li>
+                <li role="presentation"><a href=#js7 role="tab" data-toggle="tab">Javascript</a></li>
+                <li role="presentation"><a href=#html7 role="tab" data-toggle="tab">HTML</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id=output7>
+
+<div style='text-align: center;margin-bottom: 3px;'>
+<button class='btn btn-default' id='SubmitDistribution3' disabled='true'>Submit Distribution</button>
+</div>
+<div id='targetdiv7' class='distbuilder'></div>
+
+                </div>
+                <div role="tabpanel" class="tab-pane" id=js7>
+                    <div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">distbuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DistributionBuilder</span><span class="p">({</span>
+    <span class="nx">minVal</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">maxVal</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="nx">nRows</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nx">nBuckets</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="nx">nBalls</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nx">onChange</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">isComplete</span><span class="p">())</span> <span class="p">{</span>
+            <span class="nx">$j</span><span class="p">(</span><span class="s1">&#39;#SubmitDistribution&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">$j</span><span class="p">(</span><span class="s1">&#39;#SubmitDistribution&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+<span class="nx">distbuilder</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;targetdiv&#39;</span><span class="p">);</span>
+<span class="nx">distbuilder</span><span class="p">.</span><span class="nx">labelize</span><span class="p">({});</span>
+<span class="nx">$j</span><span class="p">(</span><span class="s1">&#39;#SubmitDistribution&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="nx">distbuilder</span><span class="p">.</span><span class="nx">getDistribution</span><span class="p">().</span><span class="nx">join</span><span class="p">();</span>
+    <span class="nx">Qualtrics</span><span class="p">.</span><span class="nx">SurveyEngine</span><span class="p">.</span><span class="nx">setEmbeddedData</span><span class="p">(</span><span class="s1">&#39;MyDistributionResult&#39;</span><span class="p">,</span> <span class="nx">results</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;The function &#39;</span><span class="nx">Qualtrics</span><span class="p">.</span><span class="nx">SurveyEngine</span><span class="p">.</span><span class="nx">setEmbeddedData</span><span class="p">(</span><span class="s1">&#39;MyDistributionResult&#39;</span><span class="p">,</span> <span class="s1">&#39;;</span>
+<span class="s1">    message +=  results + &#39;</span><span class="p">)</span> <span class="nx">was</span> <span class="nx">called</span><span class="p">.</span> <span class="nx">Your</span> <span class="nx">data</span> <span class="nx">would</span> <span class="nx">have</span> <span class="nx">been</span> <span class="nx">stored</span> <span class="k">in</span> <span class="nx">Qualtrics</span><span class="o">!</span><span class="err">&#39;</span><span class="p">;</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span>
+<span class="p">});</span>
+</pre></div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id=html7>
+                    <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&#39;text-align: center;margin-bottom: 3px;&#39;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;btn btn-default&#39;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;SubmitDistribution&#39;</span> <span class="na">disabled</span><span class="o">=</span><span class="s">&#39;true&#39;</span><span class="p">&gt;</span>Submit Distribution<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;targetdiv&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<h1 id="646-css-structure">6. CSS Structure</h1>
+<p>A DistributionBuilder object consists of three elements:</p>
+<ul>
+<li>The <strong>grid</strong>, an matrix of cells in which the balls allocated are
+displayed.</li>
+<li>The <strong>labels</strong>, a line matching each bucket to a value.</li>
+<li>The <strong>buttons</strong>, which allow the user to increment or decrement a
+bucket.</li>
+</ul>
+<p>If you want to customize the appearance of the distribution builder,
+the full list of classes defined by those elements can be found in the
+<code>distributionbuilder.css</code> file.</p>
+<p>The following CSS tree will help you understand the how the
+DistributionBuilder and its elements are rendered on screen:</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MyContainer&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;distbuilder&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;grid&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;distrow row2&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;col0&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;col1&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;col2&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;distrow row1&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;col0&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell filled&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;col1&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;col2&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;distrow row0&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;col0&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell filled&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;col1&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;col2&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;buttons&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;distrow&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;buttongroup&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-default distbutton glyphicon glyphicon-plus&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-default distbutton glyphicon glyphicon-minus&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;buttongroup&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-default distbutton glyphicon glyphicon-plus&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-default distbutton glyphicon glyphicon-minus&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;buttongroup&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-default distbutton glyphicon glyphicon-plus&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-default distbutton glyphicon glyphicon-minus&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;labels&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;distrow&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;label0&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;label&quot;</span><span class="p">&gt;</span>~1€<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;label1&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;label&quot;</span><span class="p">&gt;</span>~2€<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;label2&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;label&quot;</span><span class="p">&gt;</span>~3€<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<h1 id="746-more-information">7. More Information</h1>
+<p>The first distribution builder was developed by Sharpe, Goldstein and
+Blythe (<a href="http://web.stanford.edu/~wfsharpe/art/qpaper/qpaper.html">2000</a>),
+and was featured later in Goldstein, Johnson and Sharpe
+(<a href="http://www.dangoldstein.com/papers/GoldsteinJohnsonSharpe_OutcomesVsProducts_JCR08.pdf">2008</a>)
+and Delavande and Rhowedder
+(<a href="http://poq.oxfordjournals.org/content/early/2007/12/31/poq.nfn062.extract">2008</a>).</p>
+<p>The library DistributionBuilder is published under the 
+<a href="https://github.com/QuentinAndre/DistributionBuilder/blob/master/LICENSE">MIT license</a>. 
+The code is written in ES2016 Javascript, and is
+transpiled in legacy code for cross-browsers compatibility.
+It relies on <a href="https://jquery.com/">jQuery</a>, and uses some elements of
+<a href="http://getbootstrap.com/getting-started/">Bootstrap</a> for styling.</p>
+<p>I am grateful for the financial support of ADL Partner, the comments of 
+<a href="http://www.colorado.edu/business/nicholas-reinholtz">Nicholas Reinholtz</a>
+and <a href="http://www.colorado.edu/business/bart-de-langhe">Bart de Langhe</a>
+on previous versions of the Distribution Builder. I would also like to
+thank <a href="http://www.dangoldstein.com/">Dan Goldstein</a> for his references
+on the history of the distribution builder, and for advertising the tool
+on his blog.
+Finally, thanks to <a href="https://www.researchgate.net/profile/Ignazio_Ziano">Ignazio Ziano</a>
+for uncovering a bug when trying to use the library.</p>
+    </div>
+</div>
+
+    <div class="col-sm-3">
+        <aside>
+            <nav id="toc" data-spy="affix" data-toggle="toc"><strong>Table of Content</strong></nav>
+        </aside>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy;  Quentin André
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+<script src="/theme/js/toc.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'quentinandre'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-60799896-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+        <script src="/theme/scripts/"></script>
+        <script src="/theme/scripts/distbuilder.js"></script>
+            <link rel="stylesheet" href="/theme/css/">
+        <link rel="stylesheet" href="/theme/css/distbuilder.css">
+
+    <link href="/theme/css/software.css" rel="stylesheet">
+
+
+</body>
+</html>
+
+
+
