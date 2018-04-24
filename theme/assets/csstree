@@ -1,0 +1,42 @@
+<div id="MyContainer" class="distbuilder">
+    <div class="grid">
+        <div class="distrow row2">
+            <div class="cell col0"><div class="ball"></div></div>
+            <div class="cell col1"><div class="ball"></div></div>
+            <div class="cell col2"><div class="ball"></div></div>
+        </div>
+        <div class="distrow row1">
+            <div class="cell col0 filled"><div class="ball"></div></div>
+            <div class="cell col1"><div class="ball"></div></div>
+            <div class="cell col2"><div class="ball"></div></div>
+        </div>
+        <div class="distrow row0">
+            <div class="cell col0 filled"><div class="ball"></div>
+            <div class="cell col1"><div class="ball"></div></div>
+            <div class="cell col2"><div class="ball"></div></div>
+        </div>
+    </div>
+    <div class="buttons">
+        <div class="distrow">
+            <div class="buttongroup">
+                <a class="btn btn-default distbutton glyphicon glyphicon-plus"></a>
+                <a class="btn btn-default distbutton glyphicon glyphicon-minus"></a>
+            </div>
+            <div class="buttongroup">
+                <a class="btn btn-default distbutton glyphicon glyphicon-plus"></a>
+                <a class="btn btn-default distbutton glyphicon glyphicon-minus"></a>
+            </div>
+            <div class="buttongroup">
+                <a class="btn btn-default distbutton glyphicon glyphicon-plus"></a>
+                <a class="btn btn-default distbutton glyphicon glyphicon-minus"></a>
+            </div>
+        </div>
+    </div>
+    <div class="labels">
+        <div class="distrow">
+            <div class="label label0">~1€</div>
+            <div class="label label1">~2€</div>
+            <div class="label label2">~3€</div>
+        </div>
+    </div>
+</div>

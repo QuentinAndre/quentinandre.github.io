@@ -54,7 +54,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
     <ul class="breadcrumb list-inline">
-        <li><a href="/software">
+        <li><a href="/softwares">
             Software
         </a></li>
         <li class="active"><a href="/softwares/distributionbuilder/">
@@ -91,7 +91,7 @@ subjective probabilities, perceptions of frequency, and confidence
 judgements.</p>
 <p>However, the implementation of such distribution builders in online
 studies is not straightforward, as survey platforms do not
-implement this type of question. The DistributionBuilder library was
+implement them. The DistributionBuilder library was
 created to address this issue, and make the implementation of
 distribution builders easy and accessible to researchers.
 The library is user-friendly, and requires very little programming
@@ -101,18 +101,18 @@ knowledge to be used.</p>
 <p><code>Quentin ANDRE. (2016, November 15). DistributionBuilder v 1.0.0. Zenodo. http://doi.org/10.5281/zenodo.166736</code></p>
 <p>It is also accessible using its <a href="https://doi.org/10.5281/zenodo.166736">Digital Object Identifier (DOI)</a>.</p>
 <h2 id="c-about">C. About</h2>
-<p>DistributionBuilder was developed by Quentin André while a Ph.D. candidate in
-Marketing at INSEAD Business School, France. If you have any comment,
+<p>I wrote DistributionBuilder while a Ph.D. candidate in
+Marketing at INSEAD, France. If you have any comment,
 feedback or suggestion regarding this library or its documentation,
 please let me know at
-<a href="mailto:quentin@andre@insead.edu">quentin.andre@insead.edu</a> or use
+<a href="mailto:andre@rsm.edu">andre@rsm.edu</a> or use
 GitHub issues.</p>
 <h1 id="246-installation">2. Installation</h1>
 <p>You have several ways of adding DistributionBuilder to your experiments:</p>
-<h2 id="a-to-qualtrics">A. To Qualtrics</h2>
+<h2 id="a-qualtrics">A. Qualtrics</h2>
 <p>If you prefer starting from a minimal working example and tweaking it,
 <a href="/theme/assets/qualtricsexample.qsf" target="_blank" download>
-you can find a fully functional integration to Qualtrics here in the form of a .qsf file</a>
+here is a fully functional integration in the form of a .qsf file</a>
 that you can import in Qualtrics.</p>
 <p>Otherwise, just follow these simple steps:</p>
 <ol>
@@ -126,8 +126,8 @@ that you can import in Qualtrics.</p>
 
 <p>That's it! You can now add your own distribution builders in the
 "Custom Javascript" section of your Qualtrics questions. For examples on
-how to use it, follow the instructions on this page.</p>
-<h2 id="b-to-stand-alone-website">B. To Stand-Alone Website</h2>
+how to use it, refer to the instructions on this page.</p>
+<h2 id="b-stand-alone-website">B. Stand-Alone Website</h2>
 <p>If you are hosting your experiment on a separate website, here is how to add the script:</p>
 <ol>
 <li>Download the Library using the button at the top of the page.</li>
@@ -184,8 +184,8 @@ if you have never added Javascript to a Qualtrics question before.</li>
 two <code>&lt;script&gt;</code> tags.</li>
 </ul>
 <p>In just three lines of code, you have created an interactive (try it!)
-Distribution Builder in the <code>&lt;div&gt;</code> section called “targetdiv”.</p>
-<p>The DistributionBuilder can be customized to your liking. Browse the
+Distribution Builder!</p>
+<p>It can be customized to your liking. Browse the
 sections below to discover how you can access and store the results
 of your participants, customize the appearance and features of the
 distribution builder, and implement more complex logics in your studies.</p>
@@ -276,7 +276,7 @@ page, and how it should be displayed.</p>
 
 
 <p>This method requires the argument <code>target</code>, and you can optionally
-supply the <code>order</code> and the <code>resize</code> arguments to further tweak the
+supply the <code>order</code> argument to tweak the
 appearance of the Distribution Builder.</p>
 <ul>
 <li><code>target</code> <em>(required argument)</em>: The html <code>id</code> attribute of the
@@ -286,14 +286,6 @@ results, this element should be a <code>&lt;div&gt;</code> with a fixed width.</
 elements of the Distribution Builder should be rendered. If you want for
 instance the labels to appear above the grid, you should specify
 ‘labels-grid-buttons’.</li>
-<li><code>resize</code>, <em>(default: true)</em>: By default, the render function is
-taking the size of the <code>target</code>, dividing it by the number of buckets,
-and using this number to resize the labels, buttons, and grid. In some
-rare cases (e.g. a very narrow target  div, or a very large number of
-buckets), the resize cause the labels to overlap. In that case, it is
-recommended that you change this argument to <code>false</code>, and specify the
-width of the labels, grid, and buttons yourself using css
-(see the CSS section for more details on this).</li>
 </ul>
 <p>We can for instance use this function to place the labels at the top
 of the DistributionBuilder:</p>
@@ -623,8 +615,7 @@ distribution that the user has specified by calling the method
         </div>
     </div>
 
-<h2 id="saving-data-in-qualtrics">Saving Data in Qualtrics</h2>
-<h2 id="saving-data-in-qualtrics_1">. Saving Data in Qualtrics</h2>
+<h2 id="d-saving-data-in-qualtrics">D. Saving Data in Qualtrics</h2>
 <p>You will often want the Distribution Builder to be part of larger survey
 on Qualtrics, and store the participant's distribution in a variable.
 Here is one way to do it:</p>
@@ -713,24 +704,24 @@ bucket.</li>
 <p>If you want to customize the appearance of the distribution builder,
 the full list of classes defined by those elements can be found in the
 <code>distributionbuilder.css</code> file.</p>
-<p>The following CSS tree will help you understand the how the
+<p>The following HTML tree will help you understand the how the
 DistributionBuilder and its elements are rendered on screen:</p>
 <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;MyContainer&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;distbuilder&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;grid&quot;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;distrow row2&quot;</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;col0&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;col1&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;col2&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell col0&quot;</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ball&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell col1&quot;</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ball&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell col2&quot;</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ball&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;distrow row1&quot;</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;col0&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell filled&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;col1&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;col2&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell col0 filled&quot;</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ball&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell col1&quot;</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ball&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell col2&quot;</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ball&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;distrow row0&quot;</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;col0&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell filled&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;col1&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;col2&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell col0 filled&quot;</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ball&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell col1&quot;</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ball&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cell col2&quot;</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ball&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;buttons&quot;</span><span class="p">&gt;</span>
@@ -751,9 +742,9 @@ DistributionBuilder and its elements are rendered on screen:</p>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;labels&quot;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;distrow&quot;</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;label0&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;label&quot;</span><span class="p">&gt;</span>~1€<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;label1&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;label&quot;</span><span class="p">&gt;</span>~2€<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;label2&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;label&quot;</span><span class="p">&gt;</span>~3€<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;label label0&quot;</span><span class="p">&gt;</span>~1€<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;label label1&quot;</span><span class="p">&gt;</span>~2€<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;label label2&quot;</span><span class="p">&gt;</span>~3€<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
