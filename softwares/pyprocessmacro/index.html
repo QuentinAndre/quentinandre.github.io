@@ -176,7 +176,7 @@ be explicitely specified in the "controls" argument.</p>
 <div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Effort&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Success&quot;</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="s2">&quot;Motivation&quot;</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="s2">&quot;SkillRelevance&quot;</span><span class="p">,</span>
             <span class="n">m</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;MediationSkills&quot;</span><span class="p">,</span> <span class="s2">&quot;ModerationSkills&quot;</span><span class="p">],</span>
             <span class="n">controls</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Control1&quot;</span><span class="p">,</span> <span class="s2">&quot;Control2&quot;</span><span class="p">],</span>
-            <span class="n">controls_in</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">)</span>
+            <span class="n">controls_in</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 
@@ -188,7 +188,7 @@ a <code>controls_in</code> argument:</p>
   from the IV to the mediator(s) only.</li>
 <li><code>all_to_y</code> means that the controls will only be added in the path
   from the IV and the mediators to the DV.</li>
-<li><code>both</code> means that the controls will be added in both equations.</li>
+<li><code>all</code> means that the controls will be added in all equations.</li>
 </ul>
 <p>The ability to specify a different list of control for each equation is
 coming in the next release of PyProcessMacro.</p>
