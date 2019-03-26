@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-    <title>distBuilder - Quentin André</title>
+    <title>pysprite - Quentin André</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -10,10 +10,10 @@
 
 
 
-    <link rel="canonical" href="/softwares/distributionbuilder/">
+    <link rel="canonical" href="/softwares/pysprite/">
 
         <meta name="author" content="Quentin André"/>
-        <meta name="description" content="distBuilder allows you to add graphical interfaces to your experiments, that participants can use to &#34;draw&#34; their mental representation of a numerical or probabilistic outcome."/>
+        <meta name="description" content="pysprite is a Python 3 implementation of the SPRITE procedure. The original code on which this library is based, were developed by James Heathers, Jordan Anaya, Tim van der Zee and Nicholas JL Brown."/>
 
 
 
@@ -59,20 +59,18 @@
         <li><a href="/softwares">
             Software
         </a></li>
-        <li class="active"><a href="/softwares/distributionbuilder/">
-            distBuilder
+        <li class="active"><a href="/softwares/pysprite/">
+            pysprite
         </a></li>
     </ul>
             </ul>
             <ul class="nav navbar-nav navbar-right">
         <li>
-            <a class="btn button-lib" href=https://github.com/QuentinAndre/DistributionBuilder target="_blank">
+            <a class="btn button-lib" href=https://github.com/QuentinAndre/pysprite target="_blank">
                 View on GitHub
             </a>
         </li>
         <li></li>
-        <li><a class="btn button-lib"
-               href=https://github.com/QuentinAndre/DistributionBuilder/raw/master/distributionbuilder.zip target="_blank"> Download Library (Zip)</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -81,51 +79,14 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-        <h1 data-toc-skip class="entry-title">distBuilder</h1>
-        <h2 data-toc-skip class="entry-subtitle">Subjective Probability Elicitation Made Easy</h2>
+        <h1 data-toc-skip class="entry-title">pysprite</h1>
+        <h2 data-toc-skip class="entry-subtitle">A Python 3 Re-Implementation of the Sample Parameter Reconstruction via Iterative TEchniques (SPRITE) procedure.</h2>
     <div class="entry-content">
-        <p>In <a href="http://journal.sjdm.org/13/131029/jdm131029.pdf"><strong>'Lay understanding of probability distributions'</strong> (2014)</a>
-Daniel Goldstein and David Rothschild have highlighted the benefits of
-using graphical interfaces called <strong>distribution builders</strong> to study
-subjective probabilities, perceptions of frequency, and confidence
-judgements.</p>
-<p>However, the implementation of such distribution builders in online
-studies is not straightforward, as survey platforms do not
-implement them. I have create the distBuilder library to address this issue, and make the implementation of
-distribution builders easy and accessible to researchers.</p>
-<p>The library is extremely easy to use, and allows you to add fully functional
-distribution builders in a few lines of code.</p>
-<div class="panel panel-default">
-        <div class="panel-heading">Demo:</div>
-        <div class="panel-body">
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href=#output0 role="tab"
-                                                          data-toggle="tab">Output</a>
-                </li>
-                <li role="presentation"><a href=#js0 role="tab" data-toggle="tab">Javascript</a></li>
-                <li role="presentation"><a href=#html0 role="tab" data-toggle="tab">HTML</a></li>
-            </ul>
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id=output0>
-
-<div id='targetdiv0' class='distbuilder'></div>
-
-                </div>
-                <div role="tabpanel" class="tab-pane" id=js0>
-                    <div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">distbuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DistributionBuilder</span><span class="p">();</span>
-<span class="nx">distbuilder</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;targetdiv&#39;</span><span class="p">);</span>
-<span class="nx">distbuilder</span><span class="p">.</span><span class="nx">labelize</span><span class="p">();</span>
-</pre></div>
-                </div>
-                <div role="tabpanel" class="tab-pane" id=html0>
-                    <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;targetdiv&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</pre></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<p>To find out how to use the library in your own research, <a href="https://quentinandre.github.io/DistributionBuilder/" target="_blank">visit the documentation page of the library!</a></p>
+        <p>This library implements the <a href="https://peerj.com/preprints/26968/">SPRITE procedure</a> in Python 3. To find out how to use 
+the library for error detection and data forensics, <a href="https://github.com/QuentinAndre/pysprite" target="_blank">visit the github repository.</a></p>
+<p>The SPRITE procedure, and the original code on which this library is based, were developed by 
+<a href="http://jamesheathers.com/">James Heathers</a>, <a href="http://www.omnesres.com/">Jordan Anaya</a>, 
+<a href="http://www.timvanderzee.com/">Tim van der Zee</a> and <a href="http://steamtraen.blogspot.com/">Nicholas JL Brown</a>.</p>
     </div>
 </div>
 
@@ -191,11 +152,7 @@ distribution builders in a few lines of code.</p>
         })();
     </script>
     <!-- End Google Analytics Code -->
-        <script src="/theme/scripts/"></script>
-        <script src="/theme/scripts/distbuilder.js"></script>
-            <link rel="stylesheet" href="/theme/css/">
-        <link rel="stylesheet" href="/theme/css/distbuilder.css">
-
+    
     <link href="/theme/css/software.css" rel="stylesheet">
 
 
