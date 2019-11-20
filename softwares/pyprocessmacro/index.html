@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-    <title>PyProcessMacro - Quentin André</title>
+    <title>pyprocessmacro - Quentin André</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -30,8 +30,6 @@
           rel="stylesheet">
     <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
 
-        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Quentin André ATOM Feed"/>
 
 
 
@@ -60,7 +58,7 @@
             Software
         </a></li>
         <li class="active"><a href="/softwares/pyprocessmacro/">
-            PyProcessMacro
+            pyprocessmacro
         </a></li>
     </ul>
             </ul>
@@ -79,7 +77,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-        <h1 data-toc-skip class="entry-title">PyProcessMacro</h1>
+        <h1 data-toc-skip class="entry-title">pyprocessmacro</h1>
         <h2 data-toc-skip class="entry-subtitle">Conditional Process Analysis in Python</h2>
     <div class="entry-content">
         <h1 id="1-manifest">1. Manifest</h1>
@@ -91,11 +89,11 @@ purchase a license of those softwares to make use of the Macro.</p>
 <p>Because of the growing popularity of Python in the scientific community,
 I decided to implement the features of the Process Macro into an
 open-source library, that researchers will be able to use without
-relying on proprietary softwares. PyProcessMacro is open-source, and
+relying on proprietary softwares. pyprocessmacro is open-source, and
 released under a MIT license.</p>
 <h1 id="2-features">2. Features</h1>
 <h2 id="a-current-implementation">A. Current Implementation</h2>
-<p>In the current version, PyProcessMacro replicates the following features
+<p>In the current version, pyprocessmacro replicates the following features
 from the original Process Macro v2.16:</p>
 <ul>
 <li>All models (1 to 76), with the exception of Model 6 (serial mediation)
@@ -110,7 +108,7 @@ the continuous variables are estimated using OLS.</li>
 moderators.</li>
 <li>Rich set of options to tweak the estimation and display of the
 different models: (almost) all the options from Process exist in
-PyProcessMacro. See the documentation for more details.</li>
+pyprocessmacro. See the documentation for more details.</li>
 </ul>
 <h2 id="b-changes-and-improvements">B. Changes and Improvements</h2>
 <p>The following changes and improvements have been made from the original Process Macro:</p>
@@ -122,29 +120,29 @@ special characters.</li>
 <li>Normal theory tests for the indirect effect(s) are not reported, as
 the bias-corrected bootstrapping approach is now widely accepted and in
 most cases more robust.</li>
-<li>Plotting capabilities: PyProcessMacro can generate the plot of direct
+<li>Plotting capabilities: pyprocessmacro can generate the plot of direct
 and indirect effects at various levels of the moderators.</li>
-<li>Fast estimation process: PyProcessMacro leverages the capabilities of
+<li>Fast estimation process: pyprocessmacro leverages the capabilities of
 NumPy to efficiently compute a large number of bootstrap estimates,
 which dramatically speeds up the estimation of complex models.</li>
-<li>Transparent bootstrapping: PyProcessMacro automatically store the
+<li>Transparent bootstrapping: pyprocessmacro automatically store the
 bootstrap estimates for convenient inspection, and explicitely reports
 the samples that have been discarded because of numerical instability.</li>
 </ul>
 <h2 id="c-missing-features">C. Missing Features</h2>
-<p>In the current version, the following features have not yet been ported to PyProcessMacro:</p>
+<p>In the current version, the following features have not yet been ported to pyprocessmacro:</p>
 <ul>
 <li>Support for categorical independent variables.</li>
 <li>Generation of individual fixed effects for repeated measures.</li>
 <li>R² improvement from moderators in moderation models (1, 2, 3).</li>
 <li>Estimation of serial mediation (Model 6)</li>
-<li>Some options (<code>normal</code>, <code>varorder</code>, ...). PyProcessMacro will issue a
+<li>Some options (<code>normal</code>, <code>varorder</code>, ...). pyprocessmacro will issue a
 warning if you are trying to use an option that has not been implemented.</li>
 </ul>
 <h1 id="3-installation-and-usage">3. Installation and Usage</h1>
 <h2 id="a-installation">A. Installation</h2>
-<p>You can install PyProcessMacro with pip:</p>
-<div class="highlight"><pre><span></span>pip install pyprocessmacro
+<p>You can install pyprocessmacro with pip:</p>
+<div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pyprocessmacro</span>
 </pre></div>
 
 
@@ -163,17 +161,17 @@ and the symbols used by the model.</p>
 
 <p><a href="SampleOutput.md">Click to see a sample output!</a></p>
 <p>You might have noticed that there is no argument <code>varlist</code> in
-PyProcessMacro: this list is automatically inferred from the variable
-names given to x, y, m. Other than this, the syntax for PyProcessMacro
+pyprocessmacro: this list is automatically inferred from the variable
+names given to x, y, m. Other than this, the syntax for pyprocessmacro
 is (almost) identical to that of Process. Unless this documentation
 mentions otherwise, you can assume that all the options/keywords from
-Process exist in PyProcessMacro.</p>
+Process exist in pyprocessmacro.</p>
 <p>Once the object is initialized, its <code>summary()</code> method is used to
 display the estimation results.</p>
 <h2 id="c-adding-statistical-controls">C. Adding Statistical Controls</h2>
 <p>In Process, the controls are defined as "any argument in the varlist
 that is not the IV, the DV, a moderator, or  a mediator." In
-PyProcessMacro, the list of variables to include as controls have to
+pyprocessmacro, the list of variables to include as controls have to
 be explicitely specified in the "controls" argument.</p>
 <div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Effort&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Success&quot;</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="s2">&quot;Motivation&quot;</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="s2">&quot;SkillRelevance&quot;</span><span class="p">,</span>
             <span class="n">m</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;MediationSkills&quot;</span><span class="p">,</span> <span class="s2">&quot;ModerationSkills&quot;</span><span class="p">],</span>
@@ -193,11 +191,11 @@ a <code>controls_in</code> argument:</p>
 <li><code>all</code> means that the controls will be added in all equations.</li>
 </ul>
 <p>The ability to specify a different list of control for each equation is
-coming in the next release of PyProcessMacro.</p>
+coming in the next release of pyprocessmacro.</p>
 <h2 id="d-logistic-regressions-for-binary-outcomes">D. Logistic Regressions for Binary Outcomes</h2>
 <p>The original Process Macro automatically uses a Logistic (instead of OLS)
 regression when it detects a binary outcome.</p>
-<p>PyProcessMacro favors a more explicit approach, and requires you to set
+<p>pyprocessmacro favors a more explicit approach, and requires you to set
 the parameter <code>logit</code> to <code>True</code> if your DV should be estimated using a
 Logistic regression.</p>
 <div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Effort&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Success&quot;</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="s2">&quot;Motivation&quot;</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="s2">&quot;SkillRelevance&quot;</span><span class="p">,</span> 
@@ -209,7 +207,7 @@ Logistic regression.</p>
 <p>It goes without saying that this will return an error if your DV is not
 dichotomous.</p>
 <h2 id="e-spotlight-values-for-moderators">E. Spotlight Values for Moderators</h2>
-<p>In Process as in PyProcessMacro, the spotlight values of the moderators
+<p>In Process as in pyprocessmacro, the spotlight values of the moderators
  are defined as follow:</p>
 <ul>
 <li>By default, the spotlight values are equal to M - 1SD, M and M + 1SD,
@@ -222,7 +220,7 @@ discrete values.</li>
 </ul>
 <p>In Process, custom spotlight values can be applied to each moderator
 q, v, z, ... through the arguments qmodval, vmodval, zmodval...</p>
-<p>In PyProcessMacro, the user must instead supply custom values for each
+<p>In pyprocessmacro, the user must instead supply custom values for each
 moderator in a dictionary passed to the <code>modval</code> parameter:</p>
 <div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Effort&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Success&quot;</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="s2">&quot;Motivation&quot;</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="s2">&quot;SkillRelevance&quot;</span><span class="p">,</span> 
             <span class="n">m</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;MediationSkills&quot;</span><span class="p">,</span> <span class="s2">&quot;ModerationSkills&quot;</span><span class="p">],</span>
@@ -355,7 +353,7 @@ If you call <code>p.coeff_summary()</code>, you will get an error.</p>
 <p>The original Process macro allows you to save the parameter estimates
 for each bootstrap sample by specifying the <code>save</code> keyword. The Macro
 then returns a new dataset of bootstrap estimates.</p>
-<p>In PyProcessMacro, this is done by calling the method
+<p>In pyprocessmacro, this is done by calling the method
 <code>get_bootstrap_estimates()</code>, which returns a DataFrame containing
 the parameters estimates. Each row represents a bootstrap repetition,
 and the columns are explicitely labeled to identity the variables and
@@ -368,7 +366,7 @@ the model.</p>
 
 
 <h1 id="6-plotting-capabilities">6. Plotting Capabilities</h1>
-<p>PyProcessMacro allows you to plot the conditional direct and indirect
+<p>pyprocessmacro allows you to plot the conditional direct and indirect
 effect(s), at different values of the moderators.</p>
 <p>The methods <code>plot_indirect_effects()</code> and <code>plot_direct_effects()</code> are
 identical in syntax, with one small exception: you must specify the name
@@ -581,7 +579,7 @@ object, on which the following functions are called:</p>
     </div>
 
 <h1 id="7-about">7. About</h1>
-<p>PyProcessMacro was developed by Quentin André during his Ph.D. in
+<p>pyprocessmacro was developed by Quentin André during his Ph.D. in
 Marketing at INSEAD Business School, France.</p>
 <p>His work on this library was made possible by Andrew F. Hayes' 
 <a href="http:/afhayes.com/introduction-to-mediation-moderation-and-conditional-process-analysis.html">excellent book</a>, 
@@ -592,11 +590,11 @@ are copyrighted by Andrew F. Hayes.
 The original code must not be edited or modified, and must not be
 distributed outside of
 <a href="http://www.processmacro.org">http://www.processmacro.org</a>.</p>
-<p>Because PyProcessMacro is a complete reimplementation of the Process
+<p>Because pyprocessmacro is a complete reimplementation of the Process
 Macro, and was not based on the original code, permission was generously
-granted by Andrew F. Hayes to distribute PyProcessMacro under a MIT
+granted by Andrew F. Hayes to distribute pyprocessmacro under a MIT
 license.</p>
-<p>This permission is not an endorsement of PyProcessMacro: all potential
+<p>This permission is not an endorsement of pyprocessmacro: all potential
 errors, bugs and inaccuracies are my own, and Andrew F. Hayes was not
 involved in writing, reviewing, or debugging the code.</p>
     </div>

@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Quentin André - softwares</title><link href="/" rel="alternate"></link><link href="/softwares%5Cfeeds%5Csoftwares.atom.xml" rel="self"></link><id>/</id><updated>2019-03-26T00:00:00-06:00</updated><entry><title>pysprite</title><link href="/softwares/pysprite/" rel="alternate"></link><published>2019-03-26T00:00:00-06:00</published><updated>2019-03-26T00:00:00-06:00</updated><author><name>Quentin André</name></author><id>tag:None,2019-03-26:/softwares/pysprite/</id><summary type="html">&lt;p&gt;pysprite is a Python 3 implementation of the SPRITE procedure. The original code on which this library is based,
-were developed by James Heathers, Jordan Anaya, Tim van der Zee and Nicholas JL Brown.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This library implements the &lt;a href="https://peerj.com/preprints/26968/"&gt;SPRITE procedure&lt;/a&gt; in Python 3. To find out how to use 
-the library for error detection and data forensics, &lt;a href="https://github.com/QuentinAndre/pysprite" target="_blank"&gt;visit the github repository.&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;The SPRITE procedure, and the original code on which this library is based, were developed by 
-&lt;a href="http://jamesheathers.com/"&gt;James Heathers&lt;/a&gt;, &lt;a href="http://www.omnesres.com/"&gt;Jordan Anaya&lt;/a&gt;, 
-&lt;a href="http://www.timvanderzee.com/"&gt;Tim van der Zee&lt;/a&gt; and &lt;a href="http://steamtraen.blogspot.com/"&gt;Nicholas JL Brown&lt;/a&gt;.&lt;/p&gt;</content></entry><entry><title>wordSearchJS</title><link href="/softwares/wordsearchjs/" rel="alternate"></link><published>2019-03-26T00:00:00-06:00</published><updated>2019-03-26T00:00:00-06:00</updated><author><name>Quentin André</name></author><id>tag:None,2019-03-26:/softwares/wordsearchjs/</id><summary type="html">&lt;p&gt;wordSearchJS allows you to add word search tasks to your experiments. It integrates nicely with Qualtrics and
-other survey engines.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A Javascript library to add Word Search Tasks to online and offline experiments. 
-Adapted from &lt;a href="https://calin-jageman.net/lab/word_search/"&gt;Robert J. Calin-Jageman's word search task&lt;/a&gt;, 
-with added functionality to facilitate Qualtrics integration.&lt;/p&gt;
-&lt;p&gt;To find out how to use the library in your own research, &lt;a href="https://github.com/QuentinAndre/WordSearchJS" target="_blank"&gt;visit the github repository.&lt;/a&gt;
-You can also &lt;a href="https://codepen.io/QuentinAndre/full/rQLejK/" target="_blank"&gt;preview it on CodePen&lt;/a&gt;.&lt;/p&gt;</content></entry><entry><title>PyProcessMacro</title><link href="/softwares/pyprocessmacro/" rel="alternate"></link><published>2017-06-03T00:00:00-06:00</published><updated>2017-06-03T00:00:00-06:00</updated><author><name>Quentin André</name></author><id>tag:None,2017-06-03:/softwares/pyprocessmacro/</id><summary type="html">&lt;p&gt;This Python library facilitates the estimation of moderation,
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Quentin André - softwares</title><link href="/" rel="alternate"></link><link href="/softwares%5Cfeeds%5Csoftwares.atom.xml" rel="self"></link><id>/</id><updated>2019-04-04T00:00:00-06:00</updated><entry><title>pyprocessmacro</title><link href="/softwares/pyprocessmacro/" rel="alternate"></link><published>2019-04-04T00:00:00-06:00</published><updated>2019-04-04T00:00:00-06:00</updated><author><name>Quentin André</name></author><id>tag:None,2019-04-04:/softwares/pyprocessmacro/</id><summary type="html">&lt;p&gt;This Python library facilitates the estimation of moderation,
 mediation, and conditional processes. It replicates the features and
 syntax of Andrew F. Hayes' Process Macro, ensuring a seamless
 transition from one library to the other.&lt;/p&gt;</summary><content type="html">&lt;h1 id="1-manifest"&gt;1. Manifest&lt;/h1&gt;
@@ -21,11 +11,11 @@ purchase a license of those softwares to make use of the Macro.&lt;/p&gt;
 &lt;p&gt;Because of the growing popularity of Python in the scientific community,
 I decided to implement the features of the Process Macro into an
 open-source library, that researchers will be able to use without
-relying on proprietary softwares. PyProcessMacro is open-source, and
+relying on proprietary softwares. pyprocessmacro is open-source, and
 released under a MIT license.&lt;/p&gt;
 &lt;h1 id="2-features"&gt;2. Features&lt;/h1&gt;
 &lt;h2 id="a-current-implementation"&gt;A. Current Implementation&lt;/h2&gt;
-&lt;p&gt;In the current version, PyProcessMacro replicates the following features
+&lt;p&gt;In the current version, pyprocessmacro replicates the following features
 from the original Process Macro v2.16:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;All models (1 to 76), with the exception of Model 6 (serial mediation)
@@ -40,7 +30,7 @@ the continuous variables are estimated using OLS.&lt;/li&gt;
 moderators.&lt;/li&gt;
 &lt;li&gt;Rich set of options to tweak the estimation and display of the
 different models: (almost) all the options from Process exist in
-PyProcessMacro. See the documentation for more details.&lt;/li&gt;
+pyprocessmacro. See the documentation for more details.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="b-changes-and-improvements"&gt;B. Changes and Improvements&lt;/h2&gt;
 &lt;p&gt;The following changes and improvements have been made from the original Process Macro:&lt;/p&gt;
@@ -52,29 +42,29 @@ special characters.&lt;/li&gt;
 &lt;li&gt;Normal theory tests for the indirect effect(s) are not reported, as
 the bias-corrected bootstrapping approach is now widely accepted and in
 most cases more robust.&lt;/li&gt;
-&lt;li&gt;Plotting capabilities: PyProcessMacro can generate the plot of direct
+&lt;li&gt;Plotting capabilities: pyprocessmacro can generate the plot of direct
 and indirect effects at various levels of the moderators.&lt;/li&gt;
-&lt;li&gt;Fast estimation process: PyProcessMacro leverages the capabilities of
+&lt;li&gt;Fast estimation process: pyprocessmacro leverages the capabilities of
 NumPy to efficiently compute a large number of bootstrap estimates,
 which dramatically speeds up the estimation of complex models.&lt;/li&gt;
-&lt;li&gt;Transparent bootstrapping: PyProcessMacro automatically store the
+&lt;li&gt;Transparent bootstrapping: pyprocessmacro automatically store the
 bootstrap estimates for convenient inspection, and explicitely reports
 the samples that have been discarded because of numerical instability.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="c-missing-features"&gt;C. Missing Features&lt;/h2&gt;
-&lt;p&gt;In the current version, the following features have not yet been ported to PyProcessMacro:&lt;/p&gt;
+&lt;p&gt;In the current version, the following features have not yet been ported to pyprocessmacro:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Support for categorical independent variables.&lt;/li&gt;
 &lt;li&gt;Generation of individual fixed effects for repeated measures.&lt;/li&gt;
 &lt;li&gt;R² improvement from moderators in moderation models (1, 2, 3).&lt;/li&gt;
 &lt;li&gt;Estimation of serial mediation (Model 6)&lt;/li&gt;
-&lt;li&gt;Some options (&lt;code&gt;normal&lt;/code&gt;, &lt;code&gt;varorder&lt;/code&gt;, ...). PyProcessMacro will issue a
+&lt;li&gt;Some options (&lt;code&gt;normal&lt;/code&gt;, &lt;code&gt;varorder&lt;/code&gt;, ...). pyprocessmacro will issue a
 warning if you are trying to use an option that has not been implemented.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="3-installation-and-usage"&gt;3. Installation and Usage&lt;/h1&gt;
 &lt;h2 id="a-installation"&gt;A. Installation&lt;/h2&gt;
-&lt;p&gt;You can install PyProcessMacro with pip:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install pyprocessmacro
+&lt;p&gt;You can install pyprocessmacro with pip:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pyprocessmacro&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -93,17 +83,17 @@ and the symbols used by the model.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href="SampleOutput.md"&gt;Click to see a sample output!&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;You might have noticed that there is no argument &lt;code&gt;varlist&lt;/code&gt; in
-PyProcessMacro: this list is automatically inferred from the variable
-names given to x, y, m. Other than this, the syntax for PyProcessMacro
+pyprocessmacro: this list is automatically inferred from the variable
+names given to x, y, m. Other than this, the syntax for pyprocessmacro
 is (almost) identical to that of Process. Unless this documentation
 mentions otherwise, you can assume that all the options/keywords from
-Process exist in PyProcessMacro.&lt;/p&gt;
+Process exist in pyprocessmacro.&lt;/p&gt;
 &lt;p&gt;Once the object is initialized, its &lt;code&gt;summary()&lt;/code&gt; method is used to
 display the estimation results.&lt;/p&gt;
 &lt;h2 id="c-adding-statistical-controls"&gt;C. Adding Statistical Controls&lt;/h2&gt;
 &lt;p&gt;In Process, the controls are defined as "any argument in the varlist
 that is not the IV, the DV, a moderator, or  a mediator." In
-PyProcessMacro, the list of variables to include as controls have to
+pyprocessmacro, the list of variables to include as controls have to
 be explicitely specified in the "controls" argument.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Process&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Effort&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Success&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Motivation&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;SkillRelevance&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
             &lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;MediationSkills&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;ModerationSkills&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
@@ -123,11 +113,11 @@ a &lt;code&gt;controls_in&lt;/code&gt; argument:&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;all&lt;/code&gt; means that the controls will be added in all equations.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The ability to specify a different list of control for each equation is
-coming in the next release of PyProcessMacro.&lt;/p&gt;
+coming in the next release of pyprocessmacro.&lt;/p&gt;
 &lt;h2 id="d-logistic-regressions-for-binary-outcomes"&gt;D. Logistic Regressions for Binary Outcomes&lt;/h2&gt;
 &lt;p&gt;The original Process Macro automatically uses a Logistic (instead of OLS)
 regression when it detects a binary outcome.&lt;/p&gt;
-&lt;p&gt;PyProcessMacro favors a more explicit approach, and requires you to set
+&lt;p&gt;pyprocessmacro favors a more explicit approach, and requires you to set
 the parameter &lt;code&gt;logit&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt; if your DV should be estimated using a
 Logistic regression.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Process&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Effort&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Success&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Motivation&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;SkillRelevance&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
@@ -139,7 +129,7 @@ Logistic regression.&lt;/p&gt;
 &lt;p&gt;It goes without saying that this will return an error if your DV is not
 dichotomous.&lt;/p&gt;
 &lt;h2 id="e-spotlight-values-for-moderators"&gt;E. Spotlight Values for Moderators&lt;/h2&gt;
-&lt;p&gt;In Process as in PyProcessMacro, the spotlight values of the moderators
+&lt;p&gt;In Process as in pyprocessmacro, the spotlight values of the moderators
  are defined as follow:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;By default, the spotlight values are equal to M - 1SD, M and M + 1SD,
@@ -152,7 +142,7 @@ discrete values.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In Process, custom spotlight values can be applied to each moderator
 q, v, z, ... through the arguments qmodval, vmodval, zmodval...&lt;/p&gt;
-&lt;p&gt;In PyProcessMacro, the user must instead supply custom values for each
+&lt;p&gt;In pyprocessmacro, the user must instead supply custom values for each
 moderator in a dictionary passed to the &lt;code&gt;modval&lt;/code&gt; parameter:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Process&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Effort&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Success&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Motivation&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;SkillRelevance&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
             &lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;MediationSkills&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;ModerationSkills&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
@@ -285,7 +275,7 @@ If you call &lt;code&gt;p.coeff_summary()&lt;/code&gt;, you will get an error.&l
 &lt;p&gt;The original Process macro allows you to save the parameter estimates
 for each bootstrap sample by specifying the &lt;code&gt;save&lt;/code&gt; keyword. The Macro
 then returns a new dataset of bootstrap estimates.&lt;/p&gt;
-&lt;p&gt;In PyProcessMacro, this is done by calling the method
+&lt;p&gt;In pyprocessmacro, this is done by calling the method
 &lt;code&gt;get_bootstrap_estimates()&lt;/code&gt;, which returns a DataFrame containing
 the parameters estimates. Each row represents a bootstrap repetition,
 and the columns are explicitely labeled to identity the variables and
@@ -298,7 +288,7 @@ the model.&lt;/p&gt;
 
 
 &lt;h1 id="6-plotting-capabilities"&gt;6. Plotting Capabilities&lt;/h1&gt;
-&lt;p&gt;PyProcessMacro allows you to plot the conditional direct and indirect
+&lt;p&gt;pyprocessmacro allows you to plot the conditional direct and indirect
 effect(s), at different values of the moderators.&lt;/p&gt;
 &lt;p&gt;The methods &lt;code&gt;plot_indirect_effects()&lt;/code&gt; and &lt;code&gt;plot_direct_effects()&lt;/code&gt; are
 identical in syntax, with one small exception: you must specify the name
@@ -511,7 +501,7 @@ object, on which the following functions are called:&lt;/p&gt;
     &lt;/div&gt;
 
 &lt;h1 id="7-about"&gt;7. About&lt;/h1&gt;
-&lt;p&gt;PyProcessMacro was developed by Quentin André during his Ph.D. in
+&lt;p&gt;pyprocessmacro was developed by Quentin André during his Ph.D. in
 Marketing at INSEAD Business School, France.&lt;/p&gt;
 &lt;p&gt;His work on this library was made possible by Andrew F. Hayes' 
 &lt;a href="http:/afhayes.com/introduction-to-mediation-moderation-and-conditional-process-analysis.html"&gt;excellent book&lt;/a&gt;, 
@@ -522,13 +512,13 @@ are copyrighted by Andrew F. Hayes.
 The original code must not be edited or modified, and must not be
 distributed outside of
 &lt;a href="http://www.processmacro.org"&gt;http://www.processmacro.org&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Because PyProcessMacro is a complete reimplementation of the Process
+&lt;p&gt;Because pyprocessmacro is a complete reimplementation of the Process
 Macro, and was not based on the original code, permission was generously
-granted by Andrew F. Hayes to distribute PyProcessMacro under a MIT
+granted by Andrew F. Hayes to distribute pyprocessmacro under a MIT
 license.&lt;/p&gt;
-&lt;p&gt;This permission is not an endorsement of PyProcessMacro: all potential
+&lt;p&gt;This permission is not an endorsement of pyprocessmacro: all potential
 errors, bugs and inaccuracies are my own, and Andrew F. Hayes was not
-involved in writing, reviewing, or debugging the code.&lt;/p&gt;</content></entry><entry><title>distBuilder</title><link href="/softwares/distributionbuilder/" rel="alternate"></link><published>2016-01-11T00:00:00-07:00</published><updated>2016-01-11T00:00:00-07:00</updated><author><name>Quentin André</name></author><id>tag:None,2016-01-11:/softwares/distributionbuilder/</id><summary type="html">&lt;p&gt;distBuilder allows you to add graphical interfaces to your experiments, that participants can use to
+involved in writing, reviewing, or debugging the code.&lt;/p&gt;</content></entry><entry><title>distBuilder</title><link href="/softwares/distributionbuilder/" rel="alternate"></link><published>2019-03-04T00:00:00-07:00</published><updated>2019-03-04T00:00:00-07:00</updated><author><name>Quentin André</name></author><id>tag:None,2019-03-04:/softwares/distributionbuilder/</id><summary type="html">&lt;p&gt;distBuilder allows you to add graphical interfaces to your experiments, that participants can use to
 "draw" their mental representation of a numerical or probabilistic outcome.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In &lt;a href="http://journal.sjdm.org/13/131029/jdm131029.pdf"&gt;&lt;strong&gt;'Lay understanding of probability distributions'&lt;/strong&gt; (2014)&lt;/a&gt;
 Daniel Goldstein and David Rothschild have highlighted the benefits of
 using graphical interfaces called &lt;strong&gt;distribution builders&lt;/strong&gt; to study
@@ -536,7 +526,7 @@ subjective probabilities, perceptions of frequency, and confidence
 judgements.&lt;/p&gt;
 &lt;p&gt;However, the implementation of such distribution builders in online
 studies is not straightforward, as survey platforms do not
-implement them. I have create the distBuilder library to address this issue, and make the implementation of
+implement them. I have created the distBuilder library to make the implementation of
 distribution builders easy and accessible to researchers.&lt;/p&gt;
 &lt;p&gt;The library is extremely easy to use, and allows you to add fully functional
 distribution builders in a few lines of code.&lt;/p&gt;
@@ -570,4 +560,14 @@ distribution builders in a few lines of code.&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 
-&lt;p&gt;To find out how to use the library in your own research, &lt;a href="https://quentinandre.github.io/DistributionBuilder/" target="_blank"&gt;visit the documentation page of the library!&lt;/a&gt;&lt;/p&gt;</content></entry></feed>
+&lt;p&gt;To find out how to use the library in your own research, &lt;a href="https://quentinandre.github.io/DistributionBuilder/" target="_blank"&gt;visit the documentation page of the library!&lt;/a&gt;&lt;/p&gt;</content></entry><entry><title>wordSearchJS</title><link href="/softwares/wordsearchjs/" rel="alternate"></link><published>2019-02-04T00:00:00-07:00</published><updated>2019-02-04T00:00:00-07:00</updated><author><name>Quentin André</name></author><id>tag:None,2019-02-04:/softwares/wordsearchjs/</id><summary type="html">&lt;p&gt;wordSearchJS allows you to add word search tasks to your experiments. It integrates nicely with Qualtrics and
+other survey engines.&lt;/p&gt;</summary><content type="html">&lt;p&gt;A Javascript library to add Word Search Tasks to online and offline experiments. 
+Adapted from &lt;a href="https://calin-jageman.net/lab/word_search/"&gt;Robert J. Calin-Jageman's word search task&lt;/a&gt;, 
+with added functionality to facilitate Qualtrics integration.&lt;/p&gt;
+&lt;p&gt;To find out how to use the library in your own research, &lt;a href="https://github.com/QuentinAndre/WordSearchJS" target="_blank"&gt;visit the github repository.&lt;/a&gt;
+You can also &lt;a href="https://codepen.io/QuentinAndre/full/rQLejK/" target="_blank"&gt;preview it on CodePen&lt;/a&gt;.&lt;/p&gt;</content></entry><entry><title>pysprite</title><link href="/softwares/pysprite/" rel="alternate"></link><published>2019-01-04T00:00:00-07:00</published><updated>2019-01-04T00:00:00-07:00</updated><author><name>Quentin André</name></author><id>tag:None,2019-01-04:/softwares/pysprite/</id><summary type="html">&lt;p&gt;pysprite is a Python 3 implementation of the SPRITE procedure. The original code on which this library is based,
+were developed by James Heathers, Jordan Anaya, Tim van der Zee and Nicholas JL Brown.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This library implements the &lt;a href="https://peerj.com/preprints/26968/"&gt;SPRITE procedure&lt;/a&gt; in Python 3. To find out how to use 
+the library for error detection and data forensics, &lt;a href="https://github.com/QuentinAndre/pysprite" target="_blank"&gt;visit the github repository.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The SPRITE procedure, and the original code on which this library is based, were developed by 
+&lt;a href="http://jamesheathers.com/"&gt;James Heathers&lt;/a&gt;, &lt;a href="http://www.omnesres.com/"&gt;Jordan Anaya&lt;/a&gt;, 
+&lt;a href="http://www.timvanderzee.com/"&gt;Tim van der Zee&lt;/a&gt; and &lt;a href="http://steamtraen.blogspot.com/"&gt;Nicholas JL Brown&lt;/a&gt;.&lt;/p&gt;</content></entry></feed>
